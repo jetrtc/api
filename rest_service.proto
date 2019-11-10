@@ -1,0 +1,8 @@
+syntax = "proto2";
+package org.jetrtc.api;
+option go_package = "api";
+
+message RestError {
+    required int32 code = 1;
+    required string reason = 2;
+}

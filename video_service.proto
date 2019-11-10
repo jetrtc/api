@@ -1,0 +1,38 @@
+syntax = "proto2";
+package org.jetrtc.api;
+option go_package = "api";
+
+message AssignICEServersRequest {
+	optional int64 time_to_live = 1;
+}
+
+message AssignICEServersResponse {
+	repeated ICEServer ice_servers = 1;
+	optional int64 time_to_live = 2;
+}
+
+message JoinRoomRequest {
+}
+
+message JoinRoomResponse {
+	required string url = 1;
+	repeated ICEServer ice_servers = 2;
+}
+
+message ReportRoomConnectionRequest {
+	required int64 timestamp = 1;
+	required Endpoint local = 2;
+	required Endpoint remote = 3;
+}
+
+message ICEServer {
+	repeated string urls = 1;
+	optional string username = 2;
+	optional string credential = 3;
+}
+
+message Endpoint {
+	required string identity = 1;
+	required string type = 2;
+	required string address = 3;
+}
