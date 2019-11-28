@@ -1,10 +1,12 @@
-PROTOS := rest_service.proto auth_service.proto video_service.proto
+PROTOS := $(wildcard *.proto) $(wildcard */*.proto)
 PBGO := $(PROTOS:.proto=.pb.go)
 
 all: $(PBGO)
+	go mod tidy
+	go build .
 
 clean:
-	rm *.pb.go
+	rm $(PBGO)
 
 %.pb.go: %.proto
 	protoc --go_out=. $<

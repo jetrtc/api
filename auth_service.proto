@@ -1,12 +1,12 @@
-syntax = "proto2";
+syntax = "proto3";
 package org.jetrtc.api;
 option go_package = "api";
 
 message CreateAccessTokenRequest {
-    optional string identity = 1;
-    optional string room = 2;
+    string identity = 1;
+    string room = 2;
 }
 
 message CreateAccessTokenResponse {
-    required string token = 1;
+    string token = 1;
 }

@@ -21,8 +21,8 @@ var _ = math.Inf
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
 type CreateAccessTokenRequest struct {
-	Identity             *string  `protobuf:"bytes,1,opt,name=identity" json:"identity,omitempty"`
-	Room                 *string  `protobuf:"bytes,2,opt,name=room" json:"room,omitempty"`
+	Identity             string   `protobuf:"bytes,1,opt,name=identity,proto3" json:"identity,omitempty"`
+	Room                 string   `protobuf:"bytes,2,opt,name=room,proto3" json:"room,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -54,21 +54,21 @@ func (m *CreateAccessTokenRequest) XXX_DiscardUnknown() {
 var xxx_messageInfo_CreateAccessTokenRequest proto.InternalMessageInfo
 
 func (m *CreateAccessTokenRequest) GetIdentity() string {
-	if m != nil && m.Identity != nil {
-		return *m.Identity
+	if m != nil {
+		return m.Identity
 	}
 	return ""
 }
 
 func (m *CreateAccessTokenRequest) GetRoom() string {
-	if m != nil && m.Room != nil {
-		return *m.Room
+	if m != nil {
+		return m.Room
 	}
 	return ""
 }
 
 type CreateAccessTokenResponse struct {
-	Token                *string  `protobuf:"bytes,1,req,name=token" json:"token,omitempty"`
+	Token                string   `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -100,8 +100,8 @@ func (m *CreateAccessTokenResponse) XXX_DiscardUnknown() {
 var xxx_messageInfo_CreateAccessTokenResponse proto.InternalMessageInfo
 
 func (m *CreateAccessTokenResponse) GetToken() string {
-	if m != nil && m.Token != nil {
-		return *m.Token
+	if m != nil {
+		return m.Token
 	}
 	return ""
 }
@@ -114,7 +114,7 @@ func init() {
 func init() { proto.RegisterFile("auth_service.proto", fileDescriptor_0f39bb026ca10b68) }
 
 var fileDescriptor_0f39bb026ca10b68 = []byte{
-	// 157 bytes of a gzipped FileDescriptorProto
+	// 158 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0x12, 0x4a, 0x2c, 0x2d, 0xc9,
 	0x88, 0x2f, 0x4e, 0x2d, 0x2a, 0xcb, 0x4c, 0x4e, 0xd5, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0xe2,
 	0xcb, 0x2f, 0x4a, 0xd7, 0xcb, 0x4a, 0x2d, 0x29, 0x2a, 0x49, 0xd6, 0x4b, 0x2c, 0xc8, 0x54, 0xf2,
@@ -123,6 +123,6 @@ var fileDescriptor_0f39bb026ca10b68 = []byte{
 	0x49, 0xcd, 0x2b, 0xc9, 0x2c, 0xa9, 0x94, 0x60, 0x54, 0x60, 0xd4, 0xe0, 0x0c, 0x82, 0xf3, 0x85,
 	0x84, 0xb8, 0x58, 0x8a, 0xf2, 0xf3, 0x73, 0x25, 0x98, 0xc0, 0xe2, 0x60, 0xb6, 0x92, 0x21, 0x97,
 	0x24, 0x16, 0xb3, 0x8a, 0x0b, 0xf2, 0xf3, 0x8a, 0x53, 0x85, 0x44, 0xb8, 0x58, 0x4b, 0x40, 0x02,
-	0x12, 0x8c, 0x0a, 0x4c, 0x1a, 0x9c, 0x41, 0x10, 0x8e, 0x13, 0x6b, 0x14, 0x73, 0x62, 0x41, 0x26,
-	0x20, 0x00, 0x00, 0xff, 0xff, 0x8f, 0xc8, 0x65, 0xef, 0xaa, 0x00, 0x00, 0x00,
+	0x50, 0x93, 0x20, 0x1c, 0x27, 0xd6, 0x28, 0xe6, 0xc4, 0x82, 0xcc, 0x24, 0x36, 0xb0, 0xe3, 0x8c,
+	0x01, 0x01, 0x00, 0x00, 0xff, 0xff, 0x72, 0xfc, 0xbd, 0xc3, 0xb2, 0x00, 0x00, 0x00,
 }
